@@ -1,0 +1,32 @@
+Senior Ruby on Rails Engineer — Acme Payments Ltd
+Auckland, New Zealand | Hybrid | Full-time
+
+About the role:
+We are looking for a Senior Ruby on Rails Engineer to join our core payments team.
+You will design and build APIs powering our PCI-DSS compliant payment platform,
+work closely with frontend engineers consuming those APIs via React, and help raise
+the bar on testing and code quality across the team.
+
+Key responsibilities:
+- Design and implement RESTful and GraphQL APIs in Ruby on Rails
+- Work on our PostgreSQL schema and query optimisation
+- Collaborate with React frontend engineers
+- Write comprehensive RSpec test coverage
+- Participate in code review and mentor junior engineers
+
+Required skills:
+- 4+ years Ruby on Rails
+- Strong PostgreSQL and SQL optimisation experience
+- Experience with PCI-DSS or payments systems
+- React or equivalent frontend exposure
+- RSpec and TDD discipline
+- AWS or cloud deployment experience
+
+Nice to have:
+- GraphQL experience
+- Docker and CI/CD pipelines
+- Team lead or mentoring experience
+- Elasticsearch
+
+We are based in Auckland CBD and offer flexible hybrid working.
+New Zealand work rights required.

@@ -18,11 +18,9 @@ This document is the build spec. Hand it to Claude Code.
 - Output: PDF only
 - Tailoring engine: the Claude Code CLI, called in headless mode by the Ruby app
 
-### Key assumption to confirm
+### Key assumption — confirmed
 
-"Use Claude Code to do that for me" is read here as: the Ruby app runs the `claude` binary as a subprocess (`claude -p`, headless mode) and that is what does the job specific rewriting. This makes the tool fully automated end to end.
-
-If instead you meant "I will run Claude Code by hand and there is no AI inside the app," then section 7 and 8 get deleted and the tool becomes a pure renderer that takes a hand prepared `tailored.json` and turns it into PDFs. The rest of the plan still holds. Tell Claude Code which reading is correct before it starts.
+The Ruby app runs the `claude` binary as a subprocess (`claude -p`, headless mode) and that is what does the job-specific rewriting. Fully automated end to end. Confirmed.
 
 ---
 
@@ -55,72 +53,123 @@ job.txt  ──┘                                     └─► cover_letter.pd
 
 This is a superset. It holds everything you have ever done, with full detail and every metric. The tailoring step picks a subset and rephrases it. You maintain this file by hand over time.
 
-Proposed schema (Claude Code should also write a JSON Schema file for validation):
+The actual schema is derived from `data.json` already in the repo. Claude Code should write a JSON Schema file that validates this exact structure.
 
 ```json
 {
-  "personal": {
-    "full_name": "Jane Doe",
-    "email": "jane@example.com",
-    "phone": "+64 21 000 0000",
-    "location": "Auckland, New Zealand",
-    "linkedin": "linkedin.com/in/janedoe",
-    "github": "github.com/janedoe",
-    "portfolio": "janedoe.dev",
-    "work_rights": "New Zealand Citizen"
+  "meta": {
+    "candidate_name": "...",
+    "target_role": null,
+    "last_updated": "YYYY-MM-DD",
+    "notes": "..."
   },
-  "summary": "A long master summary covering everything. The tailor step will cut this down to 3 or 4 lines aimed at the specific role.",
-  "skills": [
-    { "category": "Languages", "items": ["Ruby", "Python", "SQL"] },
-    { "category": "Frameworks", "items": ["Rails", "Sinatra"] },
-    { "category": "Cloud", "items": ["AWS", "Docker"] }
+  "personal": {
+    "full_name": "...",
+    "email": "...",
+    "phone": "...",
+    "location": "...",
+    "linkedin": "username",
+    "github": "username",
+    "visa_status": "Post Study Work Visa, valid until May 2029",
+    "references": "Available on request"
+  },
+  "professional_summary": {
+    "headline": "...",
+    "years_experience": "...",
+    "summary": "Long master summary. The tailor step cuts this to 3-4 lines for the role.",
+    "domains_worked_in": ["Travel and booking systems", "..."]
+  },
+  "languages": [
+    { "language": "English", "proficiency": "Fluent / professional working proficiency" },
+    { "language": "Bengali", "proficiency": "Native" }
   ],
+  "skills": {
+    "backend": ["Ruby on Rails", "Django", "..."],
+    "frontend": ["React", "Angular", "..."],
+    "mobile": ["React Native"],
+    "databases": ["PostgreSQL", "MySQL"],
+    "devops_cloud": ["AWS", "GCP", "Docker", "..."],
+    "testing": ["RSpec", "Capybara", "Jest", "TDD"],
+    "tools": ["GitHub", "Postman", "Jira", "..."]
+  },
   "experience": [
     {
-      "company": "Acme Ltd",
+      "id": "exp_xxx",
       "title": "Senior Engineer",
+      "company": "Acme Ltd",
+      "start_date": "2021-03",
+      "end_date": null,
       "location": "Auckland, NZ",
-      "start": "2021-03",
-      "end": null,
-      "current": true,
-      "summary": "One line on the role and scope.",
+      "work_mode": "Hybrid",
+      "context": "Optional note on how to frame this role on the CV (e.g. academic placement context). Never appears on the CV verbatim — it is an instruction to the tailor.",
+      "tech_stack": ["Ruby on Rails", "AWS"],
       "achievements": [
-        "Full list of every achievement with hard numbers. More than will ever appear on one CV. The tailor step selects and rewrites from here."
-      ],
-      "tech": ["Ruby", "Rails", "AWS"],
-      "tags": ["backend", "leadership", "payments"]
+        {
+          "id": "exp_xxx_1",
+          "description": "Full text of the achievement.",
+          "metrics": "Hard number or null if not yet confirmed.",
+          "tags": ["backend", "leadership"]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_xxx",
+      "name": "...",
+      "context": "Built at Acme Ltd",
+      "description": "What it is and does.",
+      "tech": ["Ruby"],
+      "linked_experience": "exp_xxx"
     }
   ],
   "education": [
     {
-      "institution": "University of Auckland",
-      "qualification": "BSc",
-      "field": "Computer Science",
-      "start": "2014",
-      "end": "2017",
-      "details": "Optional honours, GPA, relevant papers."
+      "degree": "Master of Software Engineering",
+      "institution": "...",
+      "start_date": "YYYY-MM",
+      "end_date": "YYYY-MM",
+      "location": "...",
+      "include_in_cv": true
     }
   ],
-  "certifications": [
-    { "name": "AWS Solutions Architect", "issuer": "Amazon", "date": "2023", "id": "optional" }
-  ],
-  "projects": [
+  "certifications": [],
+  "awards": [
     {
-      "name": "Open source thing",
-      "description": "What it is.",
-      "tech": ["Ruby"],
-      "link": "github.com/janedoe/thing",
-      "achievements": ["Metrics if any."]
+      "id": "award_xxx",
+      "title": "Best Paper Award",
+      "event": "9th IEEE Control and System Graduate Research Colloquium",
+      "date": "YYYY-MM",
+      "location": "...",
+      "description": "..."
     }
   ],
-  "referees": "Available on request"
+  "publications": [
+    {
+      "id": "pub_xxx",
+      "title": "...",
+      "venue": "...",
+      "date": "YYYY-MM",
+      "location": "...",
+      "recognition": "Best Paper Award",
+      "note": "Optional internal note, never rendered."
+    }
+  ]
 }
 ```
 
 Notes:
 
-- `referees` can be the string `"Available on request"` or an array of referee objects. NZ employers accept either, and "available on request" is common and keeps personal contacts out of a file you scatter widely.
-- `tags` on each experience entry are hints that help the tailor step rank relevance. They never appear on the CV.
+- `personal.references` is `"Available on request"` — a string. That is the settled default.
+- `personal.visa_status` replaces the earlier `work_rights` field name. The renderer must include it on the CV; NZ employers expect it.
+- `personal.linkedin` and `personal.github` are usernames only, not full URLs. The renderer constructs the full URLs.
+- `skills` is a nested object keyed by category, not an array of `{category, items}` objects. The tailor selects a flat, relevance-ordered list for `key_skills` in `tailored.json`.
+- `experience.achievements` are objects (`id`, `description`, `metrics`, `tags`), not plain strings. `metrics` is `null` until a real number is confirmed — never invent it.
+- `experience.context` is an instruction to the tailor about how to present the role (e.g. "this is an academic placement"). It never appears on the CV verbatim.
+- `experience.work_mode` (`Hybrid`, `Remote`, `On-site`) is available for the renderer to display if desired, but is optional.
+- `education.include_in_cv` controls whether an entry is passed to the renderer. Entries with `false` (e.g. O Level, A Level) are filtered out before tailoring.
+- `awards` and `publications` are first-class sections. The tailor includes them when relevant to the role.
+- `tags` on each achievement are hints for relevance ranking. They never appear on the CV.
 - Dates use `YYYY-MM` or `YYYY`. The renderer formats them for display.
 
 ---
@@ -134,21 +183,24 @@ This is what Claude Code returns and what the renderer consumes. Claude Code sho
   "cv": {
     "headline": "Senior Ruby Engineer",
     "summary": "Three or four lines, rewritten for this role.",
-    "key_skills": ["Ordered by relevance to the job description"],
+    "key_skills": ["Ordered by relevance to the job description — flat list drawn from data.json skills object"],
     "experience": [
       {
         "company": "Acme Ltd",
         "title": "Senior Engineer",
         "location": "Auckland, NZ",
-        "start": "2021-03",
-        "end": null,
-        "current": true,
+        "start_date": "2021-03",
+        "end_date": null,
+        "work_mode": "Hybrid",
         "bullets": ["Selected and rewritten achievements, strongest first, capped per role"]
       }
     ],
     "education": [],
     "certifications": [],
-    "projects": []
+    "projects": [],
+    "awards": [],
+    "publications": [],
+    "languages": []
   },
   "cover_letter": {
     "date": "2026-05-18",
@@ -234,7 +286,7 @@ Build a small retry: if the returned text does not parse as JSON or fails schema
 These go into both the prompt (so content fits) and the renderer (so layout fits).
 
 - No photo. No date of birth, age, gender, or marital status. These are normal to omit in NZ and including them can work against you.
-- Include work rights or residency status. NZ employers expect it. It comes from `personal.work_rights`.
+- Include visa or residency status. NZ employers expect it. It comes from `personal.visa_status`.
 - Reverse chronological work history.
 - Two pages is normal and accepted in NZ. Do not crush everything onto one page. Up to three is fine for senior people. Default cap: 2, configurable.
 - Section order: contact details, professional summary, key skills, work experience, education, certifications, then referees (line or list).
@@ -432,12 +484,25 @@ Build in this order. Each phase is usable on its own, and the AI dependency come
 
 ## 17. Things for you to confirm before or during the build
 
-- The Claude Code interpretation in section 2. This is the one that changes the architecture, so confirm it first.
-- Whether `referees` should default to "Available on request" or hold real referee objects. Recommendation: the string default.
-- Page cap. Default is up to 2, which is the NZ norm. Senior roles often justify 3.
-- Bullets per role cap. Default 5.
-- Whether you want NZ English spelling enforced in generated prose. Default yes.
-- Authentication for Claude Code. Headless runs use whatever auth your local Claude Code is already set up with (subscription or API key). The tool itself never handles keys. Worth noting in case you run it somewhere without that setup.
+**Confirmed:**
+
+- Claude Code integration: automated. The Ruby app shells out to the `claude` binary as a subprocess.
+- Project root: repo root (`cover-and-cv-builder/`). `bin/cvgen`, `lib/`, `spec/` etc. sit alongside `data.json`. Running `cvgen` from the repo root finds `data.json` by default.
+
+**Settled by the existing data.json:**
+
+- References: `personal.references` is already `"Available on request"`. String default confirmed, no array needed.
+- Visa status field: `personal.visa_status` (not `work_rights`). Already in place.
+
+**Defaults assumed — override if needed:**
+
+- Page cap: 2 (NZ norm). Configurable in `.cvgen.yml`.
+- Bullets per role cap: 5.
+- NZ English spelling in generated prose: on.
+- Font: DejaVu (embedded in the repo, permissively licensed). Fallback to Helvetica if you prefer no external file.
+- `--focus` flag (pre-filter by tags before sending to Claude): deferred. Not in the initial build.
+- CI: GitHub Actions (already a GitHub repo).
+- Authentication for Claude Code: headless runs use whatever auth your local Claude Code session already has. The tool never handles keys. Note this in the README.
 
 ---
 

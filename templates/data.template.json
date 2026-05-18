@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "candidate_name": "Your Name",
+    "target_role": null,
+    "last_updated": "YYYY-MM-DD",
+    "notes": "Single canonical data source. Never invent metrics — leave them null until confirmed."
+  },
+  "personal": {
+    "full_name": "Your Name",
+    "email": "you@example.com",
+    "phone": "+64 21 000 0000",
+    "location": "Auckland, New Zealand",
+    "linkedin": "your-linkedin-username",
+    "github": "your-github-username",
+    "visa_status": "New Zealand Citizen",
+    "references": "Available on request"
+  },
+  "professional_summary": {
+    "headline": "Senior Software Engineer",
+    "years_experience": "8+",
+    "summary": "Write your master summary here. Be comprehensive — the tailor step will cut it down to 3–4 sentences for each role.",
+    "domains_worked_in": [
+      "E-commerce",
+      "SaaS"
+    ]
+  },
+  "languages": [
+    { "language": "English", "proficiency": "Native" }
+  ],
+  "skills": {
+    "backend": ["Ruby on Rails", "Python"],
+    "frontend": ["React", "JavaScript"],
+    "mobile": [],
+    "databases": ["PostgreSQL", "MySQL"],
+    "devops_cloud": ["AWS", "Docker"],
+    "testing": ["RSpec", "Jest"],
+    "tools": ["GitHub", "Jira"]
+  },
+  "experience": [
+    {
+      "id": "exp_company1",
+      "title": "Senior Software Engineer",
+      "company": "Company Name",
+      "start_date": "2021-03",
+      "end_date": null,
+      "location": "Auckland, NZ",
+      "work_mode": "Hybrid",
+      "context": null,
+      "tech_stack": ["Ruby on Rails", "React", "PostgreSQL", "AWS"],
+      "achievements": [
+        {
+          "id": "exp_company1_1",
+          "description": "Describe your achievement with strong action verbs and real impact.",
+          "metrics": null,
+          "tags": ["feature delivery", "backend"]
+        }
+      ]
+    }
+  ],
+  "projects": [],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University Name",
+      "start_date": "2013",
+      "end_date": "2017",
+      "location": "City, Country",
+      "include_in_cv": true
+    }
+  ],
+  "certifications": [],
+  "awards": [],
+  "publications": []
+}

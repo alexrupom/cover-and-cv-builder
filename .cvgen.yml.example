@@ -1,0 +1,22 @@
+# cvgen configuration
+# Copy this file to .cvgen.yml and adjust as needed.
+# .cvgen.yml is gitignored — do not commit it.
+
+# Path to the claude binary (default: 'claude', assumed to be on PATH)
+# claude_bin: claude
+
+# Maximum CV pages (NZ norm is 2; senior roles may justify 3)
+# page_cap: 2
+
+# Maximum bullet points per role
+# bullets_per_role: 5
+
+# Enforce NZ English spelling in Claude-generated prose
+# nz_english: true
+
+# Directory where job application folders are written
+# output_dir: output
+
+# Font: 'helvetica' uses the Prawn built-in (safe, no extra file needed).
+# To use a custom TTF, set font to the absolute path of the .ttf file.
+# font: helvetica

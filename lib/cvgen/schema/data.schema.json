@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CvgenData",
+  "type": "object",
+  "required": ["personal", "professional_summary", "skills", "experience", "education"],
+  "additionalProperties": true,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "candidate_name": { "type": "string" },
+        "target_role":    { "type": ["string", "null"] },
+        "last_updated":   { "type": "string" },
+        "notes":          { "type": "string" }
+      }
+    },
+    "personal": {
+      "type": "object",
+      "required": ["full_name", "email"],
+      "properties": {
+        "full_name":   { "type": "string", "minLength": 1 },
+        "email":       { "type": "string", "minLength": 1 },
+        "phone":       { "type": "string" },
+        "location":    { "type": "string" },
+        "linkedin":    { "type": "string" },
+        "github":      { "type": "string" },
+        "portfolio":   { "type": "string" },
+        "visa_status": { "type": "string" },
+        "references":  {}
+      }
+    },
+    "professional_summary": {
+      "type": "object",
+      "required": ["summary"],
+      "properties": {
+        "headline":        { "type": "string" },
+        "years_experience":{ "type": "string" },
+        "summary":         { "type": "string", "minLength": 1 },
+        "domains_worked_in":{ "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["language", "proficiency"],
+        "properties": {
+          "language":    { "type": "string" },
+          "proficiency": { "type": "string" }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "company", "start_date", "achievements"],
+        "properties": {
+          "id":         { "type": "string" },
+          "title":      { "type": "string" },
+          "company":    { "type": "string" },
+          "start_date": { "type": "string" },
+          "end_date":   { "type": ["string", "null"] },
+          "location":   { "type": "string" },
+          "work_mode":  { "type": "string", "enum": ["Hybrid", "Remote", "On-site"] },
+          "context":    { "type": "string" },
+          "tech_stack": { "type": "array", "items": { "type": "string" } },
+          "achievements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["description"],
+              "properties": {
+                "id":          { "type": "string" },
+                "description": { "type": "string", "minLength": 1 },
+                "metrics":     { "type": ["string", "null"] },
+                "tags":        { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "id":                 { "type": "string" },
+          "name":               { "type": "string" },
+          "context":            { "type": "string" },
+          "description":        { "type": "string" },
+          "tech":               { "type": "array", "items": { "type": "string" } },
+          "link":               { "type": "string" },
+          "linked_experience":  { "type": "string" }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["degree", "institution"],
+        "properties": {
+          "degree":       { "type": "string" },
+          "institution":  { "type": "string" },
+          "start_date":   { "type": "string" },
+          "end_date":     { "type": "string" },
+          "location":     { "type": "string" },
+          "include_in_cv":{ "type": "boolean" }
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name":   { "type": "string" },
+          "issuer": { "type": "string" },
+          "date":   { "type": "string" },
+          "id":     { "type": "string" }
+        }
+      }
+    },
+    "awards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "id":           { "type": "string" },
+          "title":        { "type": "string" },
+          "event":        { "type": "string" },
+          "paper":        { "type": "string" },
+          "organization": { "type": "string" },
+          "date":         { "type": "string" },
+          "location":     { "type": "string" },
+          "description":  { "type": "string" }
+        }
+      }
+    },
+    "publications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "id":          { "type": "string" },
+          "title":       { "type": "string" },
+          "venue":       { "type": "string" },
+          "date":        { "type": "string" },
+          "location":    { "type": "string" },
+          "recognition": { "type": "string" },
+          "note":        { "type": "string" }
+        }
+      }
+    }
+  }
+}

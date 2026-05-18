@@ -1,0 +1,22 @@
+# Personal data and generated output — never commit these
+data/data.json
+output/
+.cvgen.yml
+
+# Job descriptions (optional — uncomment if you don't want these in git)
+# jobs/*.txt
+
+# Ruby
+.bundle/
+vendor/bundle/
+*.gem
+.ruby-gemset
+
+# RSpec
+.rspec_status
+
+# Misc
+.DS_Store
+*.swp
+tmp/
+.claude/settings.local.json

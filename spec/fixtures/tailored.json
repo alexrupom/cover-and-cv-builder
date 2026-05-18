@@ -1,0 +1,128 @@
+{
+  "cv": {
+    "headline": "Senior Ruby on Rails Engineer",
+    "summary": "Full Stack Developer with 6+ years building and shipping production Ruby on Rails applications across payments, travel booking, and cybersecurity platforms. Experienced in PCI-DSS compliant payment systems, GraphQL and RESTful API design, and PostgreSQL optimisation, with a track record of mentoring engineers and leading sprints within ISO 27001 certified environments.",
+    "key_skills": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "GraphQL",
+      "RESTful APIs",
+      "React",
+      "RSpec / TDD",
+      "PCI-DSS payments",
+      "AWS",
+      "Docker",
+      "Team leadership"
+    ],
+    "experience": [
+      {
+        "company": "FoodME Ltd (trading as Favour)",
+        "title": "Full Stack Engineer Intern",
+        "location": "Auckland, New Zealand",
+        "start_date": "2025-11",
+        "end_date": "2026-02",
+        "work_mode": "Hybrid",
+        "bullets": [
+          "Delivered review, rating, and recipe management features for a React Native and Django application as part of the Master of Software Engineering industry placement at Yoobee Colleges, maintaining production stability throughout.",
+          "Contributed across the full agile cycle — sprint planning, PR review, and releases — debugging cross-platform issues in development and production environments."
+        ]
+      },
+      {
+        "company": "Webbernet",
+        "title": "Software Developer",
+        "location": "Queensland, Australia",
+        "start_date": "2023-03",
+        "end_date": "2025-03",
+        "work_mode": "Remote",
+        "bullets": [
+          "Sole developer on the Work Skills RTO platform, modernising a legacy Ruby on Rails system and delivering new features across the product.",
+          "Optimised the portfolios endpoint by rewriting an inefficient SQL query and eliminating N+1 queries, reducing load time from ~2 minutes to ~30 seconds (approximately 75% faster).",
+          "Designed and built an AVETMISS NAT reporting engine producing distinct formats for Queensland, New South Wales, and NCVER national submissions.",
+          "Built a certificate generation and public verification portal to confirm document authenticity and reduce credential fraud risk."
+        ]
+      },
+      {
+        "company": "WellDev",
+        "title": "Senior Software Engineer",
+        "location": "Dhaka, Bangladesh",
+        "start_date": "2019-01",
+        "end_date": "2022-09",
+        "work_mode": "Hybrid",
+        "bullets": [
+          "Advanced from intern to Senior Software Engineer in 3.5 years; led sprint planning, code reviews, and mentoring of junior engineers within an ISO 27001 certified environment.",
+          "Helped integrate a PCI-DSS compliant Credit Card Vault into the WellTravel booking platform, enabling secure card processing across a multi-region travel system.",
+          "Integrated Stripe with 3D Secure, Paygate, and PayFast for live financial transactions across multiple regional markets.",
+          "Architected a monorepo with a Rails backend and React frontend communicating over GraphQL, streamlining deployment and developer workflow.",
+          "Built Elasticsearch-backed filtering and sorting for the WellTravel booking engine."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Software Engineering",
+        "institution": "Yoobee Colleges Limited",
+        "start_date": "2025-04",
+        "end_date": "2026-04",
+        "location": "Auckland, New Zealand"
+      },
+      {
+        "degree": "Bachelor of Science in Computer Science and Engineering",
+        "institution": "North South University",
+        "start_date": "2013-08",
+        "end_date": "2018-12",
+        "location": "Dhaka, Bangladesh"
+      }
+    ],
+    "certifications": [],
+    "projects": [],
+    "awards": [
+      {
+        "title": "Best Paper Award",
+        "event": "9th IEEE Control and System Graduate Research Colloquium",
+        "date": "2018-08",
+        "location": "Shah Alam, Malaysia"
+      }
+    ],
+    "publications": [],
+    "languages": [
+      { "language": "English", "proficiency": "Fluent / professional working proficiency" },
+      { "language": "Bengali", "proficiency": "Native" }
+    ]
+  },
+  "cover_letter": {
+    "date": "18 May 2026",
+    "recipient": "Hiring Manager",
+    "company": "Acme Payments Ltd",
+    "role": "Senior Ruby on Rails Engineer",
+    "paragraphs": [
+      "I am writing to apply for the Senior Ruby on Rails Engineer role at Acme Payments Ltd. With 6+ years building production Rails applications — including PCI-DSS compliant payment systems handling live transactions across multiple markets — I am confident I can contribute meaningfully to your payments platform from day one.",
+      "At WellDev I helped integrate a Credit Card Vault into a multi-region travel booking platform and connected Stripe with 3D Secure, Paygate, and PayFast for live financial processing. I designed GraphQL and RESTful APIs, built Elasticsearch-backed search for the booking engine, and advanced to Senior Engineer and technical lead, running code reviews and mentoring junior engineers within an ISO 27001 certified environment. At Webbernet I was the sole developer on a legacy Rails modernisation, where I also reduced a critical endpoint's load time by approximately 75% through SQL and N+1 query optimisation — the kind of work directly relevant to a high-throughput payments platform.",
+      "I am based in Auckland, hold a Post Study Work Visa valid until May 2029, and am available for hybrid work. I would welcome the opportunity to discuss how my background in Rails, payments, and team leadership aligns with what you are building."
+    ],
+    "sign_off": "Kind regards,\nAlex Rupom Hasdak"
+  },
+  "ats": {
+    "matched_keywords": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "SQL optimisation",
+      "PCI-DSS",
+      "payments",
+      "React",
+      "GraphQL",
+      "RESTful APIs",
+      "RSpec",
+      "TDD",
+      "AWS",
+      "Docker",
+      "code review",
+      "mentoring",
+      "Elasticsearch",
+      "team lead"
+    ],
+    "missing_keywords": [
+      "CI/CD pipelines"
+    ],
+    "match_score": 92
+  }
+}

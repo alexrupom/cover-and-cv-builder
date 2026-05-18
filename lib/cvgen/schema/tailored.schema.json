@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CvgenTailored",
+  "type": "object",
+  "required": ["cv", "cover_letter", "ats"],
+  "additionalProperties": false,
+  "properties": {
+    "cv": {
+      "type": "object",
+      "required": ["headline", "summary", "key_skills", "experience", "education"],
+      "additionalProperties": false,
+      "properties": {
+        "headline":   { "type": "string" },
+        "summary":    { "type": "string", "minLength": 1 },
+        "key_skills": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "experience": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["company", "title", "start_date", "bullets"],
+            "additionalProperties": false,
+            "properties": {
+              "company":    { "type": "string" },
+              "title":      { "type": "string" },
+              "location":   { "type": "string" },
+              "start_date": { "type": "string" },
+              "end_date":   { "type": ["string", "null"] },
+              "work_mode":  { "type": "string" },
+              "bullets":    { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["degree", "institution"],
+            "additionalProperties": false,
+            "properties": {
+              "degree":      { "type": "string" },
+              "institution": { "type": "string" },
+              "start_date":  { "type": "string" },
+              "end_date":    { "type": "string" },
+              "location":    { "type": "string" }
+            }
+          }
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "additionalProperties": false,
+            "properties": {
+              "name":   { "type": "string" },
+              "issuer": { "type": "string" },
+              "date":   { "type": "string" }
+            }
+          }
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "name":        { "type": "string" },
+              "description": { "type": "string" },
+              "tech":        { "type": "array", "items": { "type": "string" } },
+              "link":        { "type": "string" }
+            }
+          }
+        },
+        "awards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "additionalProperties": false,
+            "properties": {
+              "title":    { "type": "string" },
+              "event":    { "type": "string" },
+              "date":     { "type": "string" },
+              "location": { "type": "string" }
+            }
+          }
+        },
+        "publications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "additionalProperties": false,
+            "properties": {
+              "title":       { "type": "string" },
+              "venue":       { "type": "string" },
+              "date":        { "type": "string" },
+              "recognition": { "type": "string" }
+            }
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["language", "proficiency"],
+            "additionalProperties": false,
+            "properties": {
+              "language":    { "type": "string" },
+              "proficiency": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "cover_letter": {
+      "type": "object",
+      "required": ["role", "paragraphs"],
+      "additionalProperties": false,
+      "properties": {
+        "date":       { "type": "string" },
+        "recipient":  { "type": "string" },
+        "company":    { "type": "string" },
+        "role":       { "type": "string" },
+        "paragraphs": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "sign_off":   { "type": "string" }
+      }
+    },
+    "ats": {
+      "type": "object",
+      "required": ["matched_keywords", "missing_keywords", "match_score"],
+      "additionalProperties": false,
+      "properties": {
+        "matched_keywords": { "type": "array", "items": { "type": "string" } },
+        "missing_keywords": { "type": "array", "items": { "type": "string" } },
+        "match_score":      { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    }
+  }
+}
