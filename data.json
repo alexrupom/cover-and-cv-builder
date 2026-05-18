@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "candidate_name": "Alex Rupom Hasdak",
+    "target_role": null,
+    "last_updated": "2026-05-18",
+    "notes": "Single canonical data source. Achievement wording is recruiter-optimised for impact and verbs. No metrics have been invented. metrics fields stay null until real numbers are supplied."
+  },
+  "personal": {
+    "full_name": "Alex Rupom Hasdak",
+    "email": "alexrupom@hotmail.com",
+    "phone": "+64 02902279015",
+    "location": "11 Union St, Auckland CBD, New Zealand",
+    "linkedin": "alexrupom",
+    "github": "alexrupom",
+    "visa_status": "Post Study Work Visa, valid until May 2029",
+    "references": "Available on request"
+  },
+  "professional_summary": {
+    "headline": "Full Stack Developer",
+    "years_experience": "6+",
+    "summary": "Full Stack Developer with 6+ years building and shipping production Ruby on Rails and React applications across travel booking, vocational training, and cybersecurity, including senior and team lead roles. Owns features end to end, from architecture and APIs through to frontend delivery and production support, with hands-on experience in PCI-DSS compliant payments, multi-region systems, and regulatory reporting. Recently relocated to New Zealand and completing a Master of Software Engineering, with local industry experience gained through the programme.",
+    "domains_worked_in": [
+      "Travel and booking systems",
+      "Learning and training platform management",
+      "Cybersecurity tooling",
+      "Food and recipe mobile applications"
+    ]
+  },
+  "languages": [
+    { "language": "English", "proficiency": "Fluent / professional working proficiency" },
+    { "language": "Bengali", "proficiency": "Native" }
+  ],
+  "skills": {
+    "backend": ["Ruby on Rails", "Django", "RESTful APIs", "GraphQL", "Resque", "RabbitMQ", "Elasticsearch", "Grape"],
+    "frontend": ["React", "Angular", "Redux", "jQuery", "Bootstrap", "SCSS", "BEM"],
+    "mobile": ["React Native"],
+    "databases": ["PostgreSQL", "MySQL"],
+    "devops_cloud": ["AWS", "GCP", "Docker", "GitHub Actions", "Helm", "Rollbar"],
+    "testing": ["RSpec", "Capybara", "Jest", "TDD"],
+    "tools": ["GitHub", "Postman", "Jira", "Claude Code", "Cursor"]
+  },
+  "experience": [
+    {
+      "id": "exp_foodme",
+      "title": "Full Stack Engineer Intern",
+      "company": "FoodME Ltd (trading as Favour)",
+      "start_date": "2025-11",
+      "end_date": "2026-02",
+      "location": "Auckland, New Zealand",
+      "work_mode": "Hybrid",
+      "context": "Industry internship undertaken as part of the Master of Software Engineering programme at Yoobee Colleges. To be presented on the CV with this context so the role reads as an academic placement, not a step down in seniority.",
+      "tech_stack": ["Django", "React Native", "Redux", "MySQL", "AWS"],
+      "achievements": [
+        {
+          "id": "exp_foodme_1",
+          "description": "Delivered review, rating, and recipe management features for a React Native and Django mobile application, fixing production defects and improving release stability.",
+          "metrics": null,
+          "tags": ["feature delivery", "mobile", "production support"]
+        },
+        {
+          "id": "exp_foodme_2",
+          "description": "Contributed across the full agile cycle, sprint planning, PR review, and releases, debugging cross-platform issues in both development and production environments.",
+          "metrics": null,
+          "tags": ["agile", "collaboration", "debugging"]
+        }
+      ]
+    },
+    {
+      "id": "exp_webbernet",
+      "title": "Software Developer",
+      "company": "Webbernet",
+      "start_date": "2023-03",
+      "end_date": "2025-03",
+      "location": "Queensland, Australia",
+      "work_mode": "Remote",
+      "tech_stack": ["Ruby on Rails", "Angular", "React", "PostgreSQL", "MySQL", "Resque", "RSpec", "Capybara", "Docker", "AWS"],
+      "achievements": [
+        {
+          "id": "exp_webbernet_1",
+          "description": "Sole developer on the Work Skills RTO client platform, modernising a legacy Ruby on Rails and Angular training system and delivering new features across the product.",
+          "metrics": null,
+          "tags": ["sole ownership", "legacy modernization", "RTO"]
+        },
+        {
+          "id": "exp_webbernet_2",
+          "description": "Designed and built an AVETMISS NAT reporting engine for the RTO that produced the distinct report formats required for Queensland, New South Wales, and national NCVER submissions, keeping the organisation compliant across all three jurisdictions.",
+          "metrics": null,
+          "tags": ["regulatory compliance", "reporting", "RTO", "system design"]
+        },
+        {
+          "id": "exp_webbernet_3",
+          "description": "Built the RTO's certificate and statement of attainment generation system, including a public verification portal that let employers and third parties confirm the authenticity of any issued document, reducing the risk of credential fraud.",
+          "metrics": null,
+          "tags": ["system design", "RTO", "document generation", "public verification", "anti-fraud"]
+        },
+        {
+          "id": "exp_webbernet_4",
+          "description": "Optimised the portfolios endpoint on the RTO platform by rewriting an inefficient SQL query and eliminating N+1 queries, cutting load time from roughly 2 minutes to about 30 seconds, a 75% reduction.",
+          "metrics": "Portfolios endpoint load time reduced from ~2 minutes to ~30 seconds (about 75% faster, roughly 4x)",
+          "tags": ["performance", "SQL optimization", "N+1", "RTO"]
+        }
+      ]
+    },
+    {
+      "id": "exp_securityroots",
+      "title": "Full Stack Ruby on Rails Developer",
+      "company": "Security Roots Ltd",
+      "start_date": "2022-09",
+      "end_date": "2023-02",
+      "location": "London, United Kingdom",
+      "work_mode": "Remote",
+      "tech_stack": ["Ruby on Rails", "JavaScript", "MySQL", "jQuery", "Bootstrap", "Resque", "RSpec", "Capybara"],
+      "achievements": [
+        {
+          "id": "exp_securityroots_1",
+          "description": "Developed features for Dradis Pro and Dradis Community Edition, a widely adopted open-source penetration testing reporting and collaboration platform used by security teams worldwide.",
+          "metrics": null,
+          "tags": ["open source", "cybersecurity", "feature delivery"]
+        },
+        {
+          "id": "exp_securityroots_2",
+          "description": "Built and hardened features in a production Ruby on Rails codebase serving hundreds of security teams across multiple countries.",
+          "metrics": "Hundreds of security teams across multiple countries",
+          "tags": ["production", "scale"]
+        },
+        {
+          "id": "exp_securityroots_3",
+          "description": "Partnered with the team to scope, prioritise, and ship user-facing improvements to the Dradis experience.",
+          "metrics": null,
+          "tags": ["collaboration", "user experience"]
+        }
+      ]
+    },
+    {
+      "id": "exp_welldev",
+      "title": "Senior Software Engineer",
+      "company": "WellDev",
+      "start_date": "2019-01",
+      "end_date": "2022-09",
+      "location": "Dhaka, Bangladesh",
+      "work_mode": "Hybrid",
+      "tech_stack": ["Ruby on Rails", "React", "JavaScript", "Redux", "GraphQL", "JSON REST API", "Grape", "PostgreSQL", "Elasticsearch", "RabbitMQ", "SCSS", "BEM", "RSpec", "Jest", "Rollbar", "GitHub Actions", "Docker", "Helm"],
+      "achievements": [
+        {
+          "id": "exp_welldev_1",
+          "description": "Advanced from intern to Senior Software Engineer in 3.5 years on the strength of consistent delivery, going on to lead sprint planning, run code reviews, and mentor junior developers.",
+          "metrics": "Promoted from intern to senior over 3.5 years",
+          "tags": ["career progression", "leadership", "mentoring"]
+        },
+        {
+          "id": "exp_welldev_2",
+          "description": "Helped build and integrate a PCI-DSS compliant Credit Card Vault into the WellTravel booking ecosystem, enabling secure card processing across a multi-region travel platform handling live financial transactions.",
+          "metrics": null,
+          "tags": ["payments", "security", "PCI-DSS", "architecture"]
+        },
+        {
+          "id": "exp_welldev_3",
+          "description": "Integrated Stripe with 3D Secure, Paygate, and PayFast into the WellTravel booking system, processing live financial transactions across multiple regional markets.",
+          "metrics": null,
+          "tags": ["payments", "integrations", "fintech"]
+        },
+        {
+          "id": "exp_welldev_4",
+          "description": "Designed and built an internal GitHub backup tool in Ruby, using Octokit and the Google Cloud Storage gem to automate off-site backups of the organisation's repositories.",
+          "metrics": null,
+          "tags": ["tooling", "Ruby", "GCP", "automation"]
+        },
+        {
+          "id": "exp_welldev_5",
+          "description": "Architected a monorepo housing a Rails backend and a React frontend communicating over GraphQL, cutting deployment complexity and streamlining the developer workflow.",
+          "metrics": null,
+          "tags": ["architecture", "developer experience", "GraphQL"]
+        },
+        {
+          "id": "exp_welldev_6",
+          "description": "Built Elasticsearch-backed filtering and sorting for the WellTravel booking engine and extended the engine's React frontend to support it.",
+          "metrics": null,
+          "tags": ["search", "Elasticsearch", "feature delivery"]
+        },
+        {
+          "id": "exp_welldev_7",
+          "description": "Built RESTful APIs with the Grape gem to power the mobile booking experience, supporting cross-platform use by end customers.",
+          "metrics": null,
+          "tags": ["API", "mobile enablement"]
+        },
+        {
+          "id": "exp_welldev_8",
+          "description": "Drove a test-driven development practice, writing RSpec and Jest coverage across the codebase to raise and protect product quality.",
+          "metrics": null,
+          "tags": ["testing", "TDD", "quality"]
+        },
+        {
+          "id": "exp_welldev_9",
+          "description": "Worked directly with WellTravel clients in Switzerland and South Africa, providing support and channelling their feedback into product improvements.",
+          "metrics": null,
+          "tags": ["client facing", "feedback", "support"]
+        },
+        {
+          "id": "exp_welldev_10",
+          "description": "Led a development team as technical lead, owning sprint planning, providing hands-on coding support, running code reviews, and mentoring juniors within an ISO 27001 certified environment.",
+          "metrics": null,
+          "tags": ["leadership", "technical lead", "quality", "mentoring"]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_github_backup_tool",
+      "name": "GitHub Backup Tool",
+      "context": "Built at WellDev",
+      "description": "An internal Ruby tool that automates off-site backups of GitHub repositories to Google Cloud Storage, using Octokit and the Google Cloud Storage gem.",
+      "tech": ["Ruby", "Octokit", "Google Cloud Storage"],
+      "linked_experience": "exp_welldev"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Software Engineering",
+      "institution": "Yoobee Colleges Limited",
+      "start_date": "2025-04",
+      "end_date": "2026-04",
+      "location": "Auckland, New Zealand",
+      "include_in_cv": true
+    },
+    {
+      "degree": "Bachelor of Science in Computer Science and Engineering",
+      "institution": "North South University",
+      "start_date": "2013-08",
+      "end_date": "2018-12",
+      "location": "Dhaka, Bangladesh",
+      "include_in_cv": true
+    },
+    {
+      "degree": "A Level",
+      "institution": "Saint Francis Xavier's Green Herald International School",
+      "start_date": "2010-08",
+      "end_date": "2012-12",
+      "location": "Dhaka, Bangladesh",
+      "include_in_cv": false
+    },
+    {
+      "degree": "O Level",
+      "institution": "LAMB English Medium School",
+      "start_date": "2008-08",
+      "end_date": "2010-06",
+      "location": "Bangladesh",
+      "include_in_cv": false
+    }
+  ],
+  "certifications": [],
+  "awards": [
+    {
+      "id": "award_ieee_best_paper",
+      "title": "Best Paper Award",
+      "event": "9th IEEE Control and System Graduate Research Colloquium",
+      "paper": "Deaf-Vibe",
+      "date": "2018-08",
+      "location": "Shah Alam, Malaysia",
+      "description": "Best Paper Award for the Deaf-Vibe research paper at the 9th IEEE Control and System Graduate Research Colloquium."
+    },
+    {
+      "id": "award_employee_of_month",
+      "title": "Employee of the Month",
+      "organization": "WellDev",
+      "date": "2020-05",
+      "location": "Dhaka, Bangladesh",
+      "description": "Recognised as Employee of the Month at WellDev."
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub_deaf_vibe",
+      "title": "Deaf-Vibe",
+      "venue": "9th IEEE Control and System Graduate Research Colloquium",
+      "date": "2018-08",
+      "location": "Shah Alam, Malaysia",
+      "recognition": "Best Paper Award",
+      "note": "A short description of what Deaf-Vibe does would strengthen this entry."
+    }
+  ]
+}
