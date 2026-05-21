@@ -197,8 +197,8 @@ module Cvgen
 
       say "  Missing:  #{Array(ats['missing_keywords']).join(', ')}", :yellow if Array(ats['missing_keywords']).any?
 
-      cost = meta[:cost_usd] || result[:cost]
-      say "  Cost:     $#{format('%.4f', cost)}" if cost
+      tokens = result[:tokens]
+      say "  Tokens:   #{tokens[:input]} in / #{tokens[:output]} out (#{tokens[:total]} total)" if tokens
       say "  Folder:   #{result[:storage].job_dir}"
       say '─────────────────────────────────────────────'
     end

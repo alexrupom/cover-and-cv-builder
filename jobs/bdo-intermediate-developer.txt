@@ -1,0 +1,32 @@
+Intermediate Developer
+BDOIS Auckland - CBD Permanent / Full Time24/4/2026
+End‑to‑end ownership of well‑scoped integrations and cloud solutions
+Work across Python, AWS serverless and modern front‑end stacks
+Variety, responsibility and direct impact in a high‑trust consulting team
+BDO Digital
+  
+BDO Digital is an 18-person digital consulting team doing genuinely interesting work for mid-market clients across New Zealand, Australia and beyond. Half the team implements cloud ERP, the other half of the team builds cloud solutions: data warehouses, API integrations, AI pipelines, CRM platforms and whatever else a client actually needs to run their business better.
+
+We're not a software house shipping features on a roadmap. Every engagement is different and you'll move between industries, problem types and tech stacks with regularity.
+
+The Role
+
+You're past the junior stage. You can own a piece of work end-to-end without needing someone in your ear. Maybe that's a standalone integration, a self-contained module or a well-scoped project from brief to delivery. You don't need to architect the whole thing, but you take real responsibility for what's yours: the design decisions, the quality, the delivery, the conversation with the client when something needs clarifying.
+
+On bigger projects, you'll work alongside a senior developer. You're not just executing instructions. You're contributing ideas, flagging issues early and growing toward the point where you're the one setting direction.
+
+The Stack
+
+Primarily Python for backend and integration work. AWS serverless is home base: Lambda, API Gateway, DynamoDB, S3. React and TypeScript on the frontend when needed. You don't need to love it, but you shouldn't run from it either.
+
+What we're looking for
+A few years of commercial development experience, with some exposure to a consulting or client-facing environment (or a genuine appetite for one)
+Solid Python. AWS familiarity is a strong plus
+Someone who communicates clearly, with the team and occasionally directly with clients
+Curiosity about the business problems underneath the technical ones
+You ask questions before you build, and you push back when something doesn't make sense
+What we're not looking for Another CV full of the right buzzwords. We'd rather hire someone with sharp instincts and a few rough edges than someone polished but disengaged.
+
+Working at BDO Digital Small team, real variety, no nonsense. You'll work closely with experienced people and take on genuine responsibility early. We invest in the people who show up curious and willing to grow.
+
+You must be based in New Zealand with the right to work permanently.

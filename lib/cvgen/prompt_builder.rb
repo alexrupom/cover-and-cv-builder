@@ -13,6 +13,8 @@ module Cvgen
       5. Reply with one JSON object only, matching the given schema exactly. No prose, no markdown, no code fences, no explanation.
       6. Use New Zealand English spelling in all generated prose (organisation, optimise, programme, honour, etc.).
       7. experience.context fields are instructions to you about how to frame a role. They are never rendered on the CV.
+      8. Job titles, company names, and dates must be copied exactly as they appear in data.json. Never shorten, paraphrase, or clean up a title (e.g. "Full Stack Engineer Intern – MSE Industry Placement" must not become "Full Stack Engineer").
+      9. Cover letter tone must sound like a real person wrote it, not an AI. Write in plain, direct sentences. Do not use em dashes (—), do not use phrases like "I am passionate about", "I am excited to", "leveraging my expertise", "demonstrated track record", "I thrive in", or any other filler language that sounds corporate or AI-generated. Vary sentence length. Use "I" naturally. Keep paragraphs short (3–4 sentences max).
     PROMPT
 
     def initialize(data:, job_description:, tailored_schema:, config:)

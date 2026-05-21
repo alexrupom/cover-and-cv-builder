@@ -43,7 +43,7 @@ module Cvgen
         ats: tailored.dig('ats', 'match_score')
       )
 
-      { tailored: tailored, storage: storage, meta: meta, cost: client.last_cost }
+      { tailored: tailored, storage: storage, meta: meta, cost: client.last_cost, tokens: client.last_tokens }
     end
 
     def render(tailored_path:, cv_only: false, letter_only: false)

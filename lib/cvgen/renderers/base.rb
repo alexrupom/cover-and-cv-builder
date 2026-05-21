@@ -1,7 +1,38 @@
 require 'prawn'
 
+Prawn::Fonts::AFM.hide_m17n_warning = true
+
 module Cvgen
   module Renderers
+    # Intercepts pdf.text / pdf.text_box to transliterate characters outside
+    # Windows-1252 (Prawn's built-in font limit) before they reach the renderer.
+    # Handles macrons (NZ/Maori text), smart quotes, and other common Unicode.
+    module SafeText
+      MACRON_MAP = {
+        "ā" => 'a', "ē" => 'e', "ī" => 'i',
+        "ō" => 'o', "ū" => 'u',
+        "Ā" => 'A', "Ē" => 'E', "Ī" => 'I',
+        "Ō" => 'O', "Ū" => 'U'
+      }.freeze
+
+      def text(str, options = {})
+        super(cp1252(str), options)
+      end
+
+      def text_box(str, options = {})
+        super(cp1252(str), options)
+      end
+
+      private
+
+      def cp1252(str)
+        s = str.to_s
+        s = s.gsub("—", ',').gsub("–", '-')  # em dash → comma, en dash → hyphen
+        MACRON_MAP.each { |k, v| s = s.gsub(k, v) }
+        s.encode('Windows-1252', undef: :replace, replace: '?').encode('UTF-8')
+      end
+    end
+
     module Base
       MARGIN        = 40
       BODY_SIZE     = 10.5
@@ -30,7 +61,7 @@ module Cvgen
             Title: full_name,
             Author: full_name
           }
-        )
+        ).tap { |doc| doc.extend(SafeText) }
       end
 
       def full_name

@@ -34,7 +34,6 @@ module Cvgen
         pdf.font('Helvetica', size: SMALL_SIZE) do
           contact_parts = [@personal['email'], @personal['phone'], @personal['location']].compact
           pdf.text contact_parts.join('  |  ')
-          pdf.text @personal['visa_status'] if @personal['visa_status']
         end
 
         pdf.move_down SECTION_GAP
@@ -46,14 +45,7 @@ module Cvgen
         pdf.move_down SECTION_GAP
 
         pdf.font('Helvetica', size: BODY_SIZE) do
-          pdf.text @letter['recipient'] if @letter['recipient']
-          pdf.text @letter['company']   if @letter['company']
-        end
-
-        pdf.move_down SECTION_GAP
-
-        pdf.font('Helvetica-Bold', size: BODY_SIZE) do
-          pdf.text "Re: #{@letter['role']}"
+          pdf.text 'Dear Hiring Team,'
         end
 
         pdf.move_down SECTION_GAP

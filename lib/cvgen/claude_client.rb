@@ -6,7 +6,7 @@ module Cvgen
   class ClaudeClient
     class ClaudeError < StandardError; end
 
-    attr_reader :last_cost, :last_model
+    attr_reader :last_cost, :last_model, :last_tokens
 
     def initialize(config:, runner: nil)
       @config             = config
@@ -15,8 +15,9 @@ module Cvgen
     end
 
     def call(system_prompt:, payload:)
-      @last_cost  = nil
-      @last_model = nil
+      @last_cost   = nil
+      @last_model  = nil
+      @last_tokens = nil
 
       check_binary!
 
@@ -25,8 +26,9 @@ module Cvgen
       raise ClaudeError, "claude exited with status #{status.exitstatus}:\n#{stderr.strip}" unless status.success?
 
       envelope = parse_envelope!(stdout, stderr)
-      @last_cost  = envelope['cost_usd'] || envelope['total_cost_usd']
-      @last_model = envelope['model']
+      @last_cost   = envelope['cost_usd'] || envelope['total_cost_usd']
+      @last_model  = envelope['model']
+      @last_tokens = extract_tokens(envelope)
 
       envelope.fetch('result') do
         raise ClaudeError, "claude response envelope missing 'result' field.\nRaw: #{stdout[0, 500]}"
@@ -44,6 +46,15 @@ module Cvgen
       raise ClaudeError,
             "The '#{bin}' binary was not found on PATH. " \
             'Install Claude Code from https://claude.ai/download and ensure it is on your PATH.'
+    end
+
+    def extract_tokens(envelope)
+      usage = envelope['usage']
+      return nil unless usage
+
+      input  = usage['input_tokens'].to_i
+      output = usage['output_tokens'].to_i
+      { input: input, output: output, total: input + output }
     end
 
     def parse_envelope!(stdout, stderr)
