@@ -3,8 +3,8 @@ data/data.json
 output/
 .cvgen.yml
 
-# Job descriptions (optional — uncomment if you don't want these in git)
-# jobs/*.txt
+# Job descriptions — local inputs, never commit these
+jobs/
 
 # Ruby
 .bundle/
