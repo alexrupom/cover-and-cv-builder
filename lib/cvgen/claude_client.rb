@@ -23,6 +23,12 @@ module Cvgen
 
       stdout, stderr, status = @runner.call(system_prompt, payload)
 
+      # Open3 returns ASCII-8BIT (binary) strings. Tag them as UTF-8 so that
+      # downstream regex/JSON handling of non-ASCII content (e.g. "Māori",
+      # macrons, em dashes) doesn't raise an encoding-incompatibility error.
+      stdout = stdout.to_s.dup.force_encoding('UTF-8')
+      stderr = stderr.to_s.dup.force_encoding('UTF-8')
+
       raise ClaudeError, "claude exited with status #{status.exitstatus}:\n#{stderr.strip}" unless status.success?
 
       envelope = parse_envelope!(stdout, stderr)

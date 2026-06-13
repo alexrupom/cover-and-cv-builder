@@ -93,10 +93,12 @@ module Cvgen
     option :data,     default: 'data/data.json', desc: 'Path to data.json'
     option :job,      desc: 'Path to job description file'
     option :job_text, desc: 'Job description as a string'
-    option :company,  desc: 'Company name'
-    option :role,     desc: 'Role title'
-    option :out,      desc: 'Override output directory'
-    option :force,    type: :boolean, default: false, desc: 'Overwrite existing job folder'
+    option :company,     desc: 'Company name'
+    option :role,        desc: 'Role title'
+    option :out,         desc: 'Override output directory'
+    option :force,       type: :boolean, default: false, desc: 'Overwrite existing job folder'
+    option :cv_only,     type: :boolean, default: false, desc: 'Render only the CV'
+    option :letter_only, type: :boolean, default: false, desc: 'Render only the cover letter'
     def generate
       config = load_config(options[:out])
       jd     = read_job(options)
@@ -107,7 +109,9 @@ module Cvgen
         job_description_text: jd,
         company: options[:company],
         role: options[:role],
-        force: options[:force]
+        force: options[:force],
+        cv_only: options[:cv_only],
+        letter_only: options[:letter_only]
       )
 
       print_tailor_result(result)

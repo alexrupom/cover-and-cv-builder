@@ -66,11 +66,12 @@ module Cvgen
       dir
     end
 
-    def generate(data_path:, job_description_text:, company:, role:, force: false)
+    def generate(data_path:, job_description_text:, company:, role:, force: false,
+                 cv_only: false, letter_only: false)
       result  = tailor(data_path: data_path, job_description_text: job_description_text,
                        company: company, role: role, force: force)
       storage = result[:storage]
-      render(tailored_path: storage.tailored_path)
+      render(tailored_path: storage.tailored_path, cv_only: cv_only, letter_only: letter_only)
       result
     end
 

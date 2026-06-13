@@ -17,6 +17,7 @@ GEM
       simpleidn (~> 0.2)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
+    markdownator (0.1.2)
     matrix (0.4.3)
     parallel (1.28.0)
     parser (3.3.11.1)
@@ -80,6 +81,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv (~> 2.8)
   json_schemer (~> 2.3)
+  markdownator (~> 0.1)
   pdf-reader (~> 2.12)
   prawn (~> 2.5)
   rspec (~> 3.13)
